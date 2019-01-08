@@ -41,3 +41,8 @@ We chose foundation as our framework.
 We chose poke API as our 1st api and we sought out our second.
 We talked about the component map, site map, and database schema.
 ==============================================================
+
+claireL -- 2019-1-7 20:33
+--------------------------------------------------------------
+Added webhook to our discord thingy. Trying it out now.
+==============================================================
