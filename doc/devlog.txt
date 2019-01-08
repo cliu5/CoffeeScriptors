@@ -58,6 +58,6 @@ Things to fix in devlog:
 
 stefanT -- 2019-1-8 14:45
 --------------------------------------------------------------
-Updated the component map by clarifying the the actions of adding
-and deleting the database.
+Updated the component map by clarifying what causes the actions 
+of adding and deleting the database.
 ==============================================================
