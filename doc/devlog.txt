@@ -46,3 +46,12 @@ claireL -- 2019-1-7 20:33
 --------------------------------------------------------------
 Added webhook to our discord thingy. Trying it out now.
 ==============================================================
+
+claireL -- 2019-1-8 12:28
+--------------------------------------------------------------
+Things to fix in devlog:
+1. Add ID to user table in database -- Sophia
+2. Clarify in the component map how deleting/releasing pokemon works -- Stefan
+3. Fix up Sitemap to remove components we removed (such as XP) -- Claire
+4. Clean up instructions by clarifying battles -- Emily
+==============================================================
