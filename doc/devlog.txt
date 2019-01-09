@@ -62,13 +62,13 @@ Updated the component map by clarifying what causes the actions
 of adding and deleting the database.
 ==============================================================
 
-leeE -- 2019-1-8 19:15
+emilyL -- 2019-1-8 19:15
 --------------------------------------------------------------
 Clarified the battle component and which pokemon set we're using
 on the design doc.
 ==============================================================
 
-liuC -- 2019-1-8 19:55
+claireL -- 2019-1-8 19:55
 --------------------------------------------------------------
 - Added requirements.txt
 - Fixed sitemap to be less flow chart-y and less cluttered
