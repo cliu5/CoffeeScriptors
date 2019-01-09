@@ -55,3 +55,15 @@ Things to fix in devlog:
 3. Fix up Sitemap to remove components we removed (such as XP) -- Claire
 4. Clean up instructions by clarifying battles -- Emily
 ==============================================================
+
+stefanT -- 2019-1-8 14:45
+--------------------------------------------------------------
+Updated the component map by clarifying what causes the actions 
+of adding and deleting the database.
+==============================================================
+
+leeE -- 2019-1-8 19:15
+--------------------------------------------------------------
+Clarified the battle component and which pokemon set we're using
+on the design doc.
+==============================================================
