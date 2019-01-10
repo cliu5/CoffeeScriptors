@@ -76,7 +76,9 @@ claireL -- 2019-1-8 19:55
 
 emilyL -- 2019-1-9 12:34
 --------------------------------------------------------------
-
+- Creating new tables in databases (pokemon and to-do list)
+- Editted db_update to add pokemons to pokemon table and tasks
+  to the to-do list.
 ==============================================================
 
 stefanT -- 2019-1-9 21:12
