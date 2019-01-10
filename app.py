@@ -4,11 +4,9 @@ from util import db_updater as update
 from util import db_search as search
 from util import db_builder as builder
 from passlib.hash import sha256_crypt
-import ssl
 import urllib
 import json
 import random
-import difflib
 
 import sqlite3 #imports sqlite
 app = Flask(__name__)
@@ -23,7 +21,7 @@ def home():
     else:
         return render_template('auth.html')
 
-#----------------------------------------------------------login/register/logout--------------------------------------------------------
+#--------------------------------------------------login/register/logout-----------------------------------------------
 @app.route("/logout")
 def logout():
     '''
@@ -43,9 +41,8 @@ def authPage():
     '''
     if 'username' in session:
         username = session['username']
-        counter = 0
         userNames = []
-        return render_template('home.html', Name = username,names = userNames)
+        return render_template('home.html', Name = username, names = userNames)
     else:
         try:
             username=request.form['username'] #username
@@ -72,7 +69,7 @@ def reg():
         return redirect(url_for('authPage'))
     return render_template('reg.html')
 
-#----------------------------------------------------------database--------------------------------------------------------
+#--------------------------------------------------------database------------------------------------------------------
 @app.route("/added",methods=['GET','POST'])
 def added():
     '''

@@ -93,3 +93,9 @@ stefanT -- 2019-1-9 21:12
 - Added functions to retrieve all pokemons and get the hp of a
   pokemon.
 ==============================================================
+
+sophiaX -- 2019-1-10 12:09
+--------------------------------------------------------------
+- Removed some unneccesary imports and lines of code
+- Added the util init file
+==============================================================
