@@ -83,5 +83,5 @@ claireL -- 2019-1-9 21:12
 --------------------------------------------------------------
 - Added pokemon.py
 - Added functions to retrieve all pokemons and get the hp of a
-pokemon.
+  pokemon.
 ==============================================================
