@@ -99,3 +99,8 @@ sophiaX -- 2019-1-10 12:09
 - Removed some unneccesary imports and lines of code
 - Added the util init file
 ==============================================================
+
+claireL -- 2019-1-11 11:09
+--------------------------------------------------------------
+- Created an add.html page for adding tasks and the python route for it
+==============================================================
