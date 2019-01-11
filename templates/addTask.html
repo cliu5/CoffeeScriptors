@@ -27,10 +27,22 @@
   <div id="callout"  class="callout" style="background-color:rgb(183, 143, 232);">
         
 
-
-  <p>Woke photo booth chia, unicorn celiac fingerstache taxidermy tattooed listicle cronut adaptogen master cleanse cloud bread typewriter humblebrag. Wayfarers sriracha fixie tattooed, DIY fingerstache small batch stumptown next level food truck mixtape tousled semiotics PBR&B. Distillery aesthetic plaid banh mi. Messenger bag authentic master cleanse af chicharrones, roof party quinoa.</p>
-
-
+<form action="/makeTask">
+          <p> Task Category:
+                <select name='category'>
+                    <option value="Habit">Habit</option>
+                    <option value="Long Term">Long Term</option>
+                    <option value="Short Term">Short Term</option>
+                    <option value="Other">Other</option>
+                </select>
+          </p>
+          <p> Task Name: <input type ="text" name="title"> </p>
+          <p> Task Difficulty: <br>  <input type="radio" name="difficulty" value="1" checked> 1<br>
+  <input type="radio" name="difficulty" value="2"> 2<br>
+  <input type="radio" name="difficulty" value="3"> 3
+<br>
+	<input type="submit" value="Create Task">
+      </form>
   
     </div>
 

@@ -70,9 +70,18 @@ def reg():
     return render_template('reg.html')
 
 #--------------------------------------------------------database------------------------------------------------------
-@app.route("/add",methods=['GET','POST'])
-def add():
-    return render_template('add.html')
+@app.route("/addTask",methods=['GET','POST'])
+def addTask():
+    if 'username' in session:
+        return render_template('addTask.html')
+    return redirect(url_for('home'))
+
+@app.route("/makeTask", methods=['GET','POST'])
+def makeTask():
+    category = request.form['category']
+    task = request.form['title']
+    difficulty = request.form['difficulty']
+    update.addTask('username', difficulty, task, category)
 
 @app.route("/added",methods=['GET','POST'])
 def added():
