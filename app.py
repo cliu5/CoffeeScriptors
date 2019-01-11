@@ -42,7 +42,7 @@ def authPage():
     if 'username' in session:
         username = session['username']
         userNames = []
-        return render_template('home.html', Name = username, names = userNames)
+        return render_template('home.html', username = username, names = userNames)
     else:
         try:
             username=request.form['username'] #username
