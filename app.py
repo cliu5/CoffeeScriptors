@@ -70,6 +70,10 @@ def reg():
     return render_template('reg.html')
 
 #--------------------------------------------------------database------------------------------------------------------
+@app.route("/add",methods=['GET','POST'])
+def add():
+    return render_template('add.html')
+
 @app.route("/added",methods=['GET','POST'])
 def added():
     '''
