@@ -1,43 +1,37 @@
 {% extends 'base.html' %}
 <html>
-<head>
-{% block head %}
-<title> Home </title>
-{% endblock %}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.0/dist/css/foundation.min.css">
-</head>
+  {% block title %}Home{% endblock %}
 
-<body>
-{% block content %}
-<div class="card">
-  <div class="card-section">
-    <p><h2>Bulbasaur</h2></p>
+  {% block content %}
+  <div class="card">
+    <div class="card-section">
+      <p><h2>Bulbasaur</h2></p>
+    </div>
+    <img src="">
+    <div class="card-section">
+      <p>Grass type bulb</p>
+    </div>
   </div>
-  <img src="">
-  <div class="card-section">
-    <p>Grass type bulb</p>
-  </div>
-</div>
 
-<div class="card">
-  <div class="card-section">
-    <p><h2>Charmander</h2></p>
+  <div class="card">
+    <div class="card-section">
+      <p><h2>Charmander</h2></p>
+    </div>
+    <img src="">
+    <div class="card-section">
+      <p>Fire type reptile</p>
+    </div>
   </div>
-  <img src="">
-  <div class="card-section">
-    <p>Fire type reptile</p>
-  </div>
-</div>
 
-<div class="card">
-  <div class="card-section">
-    <p><h2>Squirtle</h2></p>
+  <div class="card">
+    <div class="card-section">
+      <p><h2>Squirtle</h2></p>
+    </div>
+    <img src="">
+    <div class="card-section">
+      <p>Water type turtle</p>
+    </div>
   </div>
-  <img src="">
-  <div class="card-section">
-    <p>Water type turtle</p>
-  </div>
-</div>
-{% endblock %}
-</body>
+  {% endblock %}
+
 </html>
