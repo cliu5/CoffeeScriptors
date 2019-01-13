@@ -103,7 +103,12 @@ def added():
     except:
         return redirect(url_for('home'))
 
-
+@app.route('/info')
+def inventory():
+    pokeList = []
+    for each in search.getPokemon('username'):
+        pokeList.append(getImage(each))
+    return render_template('inventory.html', pokeList = pokeList)
 
 if __name__ == '__main__':
     app.debug = True

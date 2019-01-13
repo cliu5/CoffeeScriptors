@@ -3,23 +3,51 @@
 <html>
 
   <head>
-    {% block head %}
-    <title> {% block title %} {% endblock %}
-      TITLE
-    </title>
-    {% endblock %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.0/dist/css/foundation.min.css">
+    {% block head %}
+    <title> {% block title %} {% endblock %} TITLE </title>
+    {% endblock %}
   </head>
 
   <body>
+    {% block navbar %}
+    <div style="background-color:ivory;">
+      <div  style="background-color:rgb(217, 195, 244)" class="top-bar">
+	<div  style="background-color:rgb(217, 195, 244)" class="top-bar-left">
+	  <ul style="background-color:rgb(217, 195, 244);" class="dropdown menu">
+	    <li style="color:black;">
+	      <a style="color:black;"  href="/"> poketica </a>
+	    </li>
+	    <li>
+	      <a style="color:black;" href="/info"> inventory  </a>
+	    </li>
+	    <li>
+	      <a style="color:black;" href="/game"> play </a>
+	    </li>
+	    <li><a href = "/logout" style="color:black;"> log out</a>
+	    </li>
+	  </ul>
+	</div>
+      </div>
+    </div>
+
+    <div id="callout"  class="callout" style="background-color:rgb(183, 143, 232);">
+      <a href="/addTask" class="button round" style=" float:right;
+						     height: 50px;
+						     width: 50px;
+						     border-radius: 50%;
+						     background-color:green;"> </a>
+    </div>
+    {% endblock %}
+
     {% block content %}
     CONTENT
-     {% endblock %}
+    {% endblock %}
   </body>
-
+  
   {% block footer %}
   <br>
   &copy; copyright 2018 by Coffee Scriptors
   {% endblock %}
-
+  
 </html>

@@ -1,65 +1,31 @@
 
 {% extends 'base.html' %}
 
-{% block head %}<title> poketica -- gamify your life </title>
+{% block title %}poketica -- gamify your life{% endblock %}
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.1/css/foundation-float.css">
-
-<body style="background-color:ivory;">
-  <div  style="background-color:rgb(217, 195, 244)" class="top-bar">
-    <div  style="background-color:rgb(217, 195, 244)" class="top-bar-left">
-      <ul style="background-color:rgb(217, 195, 244);" class="dropdown menu">
-	<li style="color:black;">
-	  <a style="color:black;"  href="#"> poketica </a>
-	</li>
-	<li>
-	  <a style="color:black;" href="#info"> inventory  </a>
-	</li>
-	<li>
-	  <a style="color:black;" href="#game"> play </a>
-	</li>
-	<li><a href = "/logout" style="color:black;"> log out</a>
-	</li>
-      </ul>
-    </div>
-  </div>
-
-  <div id="callout"  class="callout" style="background-color:rgb(183, 143, 232);">
-        
+{% block content %}
 
 <form action="/makeTask">
-          <p> Task Category:
-                <select name='category'>
-                    <option value="Habit">Habit</option>
-                    <option value="Long Term">Long Term</option>
-                    <option value="Short Term">Short Term</option>
-                    <option value="Other">Other</option>
-                </select>
-          </p>
-          <p> Task Name: <input type ="text" name="title"> </p>
-          <p> Task Difficulty: <br>  <input type="radio" name="difficulty" value="1" checked> 1<br>
-  <input type="radio" name="difficulty" value="2"> 2<br>
-  <input type="radio" name="difficulty" value="3"> 3
-<br>
-	<input type="submit" value="Create Task">
-      </form>
-  
-    </div>
+  <p> Task Category:
+    <select name='category'>
+      <option value="Habit">Habit</option>
+      <option value="Long Term">Long Term</option>
+      <option value="Short Term">Short Term</option>
+      <option value="Other">Other</option>
+    </select>
+  </p>
+  <p> Task Name: <input type ="text" name="title"> </p>
+  <p> Task Difficulty: <br>  <input type="radio" name="difficulty" value="1" checked> 1<br>
+    <input type="radio" name="difficulty" value="2"> 2<br>
+    <input type="radio" name="difficulty" value="3"> 3
+    <br>
+    <input type="submit" class="button" value="Create Task">
+</form>
 
-  {% endblock %}
-
-
-
-  {% block content %}
-  {% set msgs = get_flashed_messages() %}
-  {% for each in msgs %}
-  <h2>{{each}}<h2>
-      <br>
-      {% endfor %}
-
-
-     
-
-
-
-	{% endblock %}
+{% set msgs = get_flashed_messages() %}
+{% for each in msgs %}
+<h2>{{each}}<h2>
+    <br>
+    {% endfor %}
+    
+    {% endblock %}

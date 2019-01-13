@@ -1,47 +1,49 @@
 {% extends 'base.html' %}
 <html>
+
   <head>
     {% block head %}
     <title> Home </title>
     {% endblock %}
     <style>
       input[type="radio"] + img{
-	  opacity:0.5;
+      opacity:0.5;
       }
       input[type=radio]:checked + img{
-	  opacity:1;
+      opacity:1;
       }
     </style>
   </head>
 
   <body>
     {% block content %}
-
+    <h1><center>Choose Your Type</center></h1>
     
     <form class="callout text-center" action ="/redone" method="POST">
 
 
-      <input type="radio" name="type" value="grass" id="grass" style="display:none;">
+      <input type="radio" name="type" value="grass" id="grass" style="display:none;" required>
       <label for="grass" style="opacity=0.5;">
 	<p><h2>Grass</h2></p>
-	<img src="../static/grass.png" alt="grass" style="width:50px;height:60px;">
+	<img src="../static/grass.png" alt="grass" style="width:70px;height:70px;">
       </label>
 
       <label>
-      <input type="radio" name="type" value="fire" style="display:none;">
-      <p><h2>Fire</h2></p>
-      <img src="../static/fire.png" alt="fire" style="width:50px;height:60px;">
+	<input type="radio" name="type" value="fire" style="display:none;">
+	<p><h2>Fire</h2></p>
+	<img src="../static/fire.png" alt="fire" style="width:70px;height:70px;">
       </label>
 
       <label>
-      <input type="radio" name="type" value="water" style="display:none;">
-      <p><h2>Water</h2></p>
-      <img src="../static/water.png" alt="water" style="width:50px;height:60px;">
+	<input type="radio" name="type" value="water" style="display:none;">
+	<p><h2>Water</h2></p>
+	<img src="../static/water.png" alt="water" style="width:70px;height:70px;">
       </label>
       
       <br>
-      <input class="button" type="submit" value="Submit">
+      <input class="button" type="submit" value="Get Pokemon">
     </form>
     {% endblock %}
   </body>
+
 </html>

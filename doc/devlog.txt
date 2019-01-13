@@ -105,8 +105,22 @@ claireL -- 2019-1-11 11:09
 - Created an add.html page for adding tasks and the python route for it
 ==============================================================
 
-stefanT -- 2019-1-9 22:32
+sophiaX -- 2019-1-11 12:09
+--------------------------------------------------------------
+- added addTask path to app
+- removed temporary files
+==============================================================
+
+stefanT -- 2019-1-12 22:32
 --------------------------------------------------------------
 - Fixed the database.
 - Updated README.md to meet requirements.
+==============================================================
+
+sophiaX -- 2019-1-13 02:17
+--------------------------------------------------------------
+- added navbar to base.html and removed from all other html files
+- removed navbar from the login and register pages
+- adjusted html files for consistency with app and for clarity
+- finished inventory.html and info route on app(not tested yet)
 ==============================================================
