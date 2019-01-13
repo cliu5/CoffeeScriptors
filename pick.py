@@ -12,7 +12,7 @@ def ok():
 def home():
     whattype=request.form['type']
     flash(whattype)
-    return redirect(url_for("ok")
+    return redirect(url_for("ok"))
 
 if __name__ == '__main__':
     app.debug = True

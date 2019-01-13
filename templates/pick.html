@@ -1,41 +1,6 @@
 {% extends 'base.html' %}
 <html>
 
-  {% block title %}Home{% endblock %}
-
-  {% block content %}
-  <div class="card">
-    <div class="card-section">
-      <p><h2>Bulbasaur</h2></p>
-    </div>
-    <img src="">
-    <div class="card-section">
-      <p>Grass type bulb</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-section">
-      <p><h2>Charmander</h2></p>
-    </div>
-    <img src="">
-    <div class="card-section">
-      <p>Fire type reptile</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-section">
-      <p><h2>Squirtle</h2></p>
-    </div>
-    <img src="">
-    <div class="card-section">
-      <p>Water type turtle</p>
-    </div>
-  </div>
-  {% endblock %}
-
-
   <head>
     {% block head %}
     <title> Home </title>
@@ -60,19 +25,19 @@
       <input type="radio" name="type" value="grass" id="grass" style="display:none;">
       <label for="grass" style="opacity=0.5;">
 	<p><h2>Grass</h2></p>
-	<img src="../static/grass.png" alt="grass" style="width:50px;height:60px;">
+	<img src="../static/grass.png" alt="grass" style="width:70px;height:70px;">
       </label>
 
       <label>
 	<input type="radio" name="type" value="fire" style="display:none;">
 	<p><h2>Fire</h2></p>
-	<img src="../static/fire.png" alt="fire" style="width:50px;height:60px;">
+	<img src="../static/fire.png" alt="fire" style="width:70px;height:70px;">
       </label>
 
       <label>
 	<input type="radio" name="type" value="water" style="display:none;">
 	<p><h2>Water</h2></p>
-	<img src="../static/water.png" alt="water" style="width:50px;height:60px;">
+	<img src="../static/water.png" alt="water" style="width:70px;height:70px;">
       </label>
       
       <br>
