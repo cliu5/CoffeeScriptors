@@ -80,7 +80,10 @@ def authPage():
         #if search.getTask(username)==[]:
             #return redirect(url_for('pick'))
         else:
-            return render_template('home.html', username = username, names = userNames)
+            return render_template('home.html',
+                                   avatar=pokepy.getImage(search.getAvatar(username)[0][0]),
+                                   username = username,
+                                   names = userNames)
     else:
         try:
             username=request.form['username'] #username
