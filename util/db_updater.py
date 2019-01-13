@@ -19,12 +19,12 @@ def adduser(username, password):
     db.commit()
     db.close()
 
-def addtask(username, difficulty, task): #adds a task to the todo list
+def addtask(username, difficulty, task, category): #adds a task to the todo list
     DB_FILE="data/CoffeeScriptors.db"
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
-    insert = "INSERT INTO todo VALUES(?,?,?)"
-    params=(username, difficulty, task)
+    insert = "INSERT INTO todo VALUES(?,?,?,?)"
+    params=(username, difficulty, task, category)
     c.execute(insert,params)
     db.commit()
     db.close()

@@ -6,13 +6,13 @@ def users(): #creates the users db
     c = db.cursor() #facilitates db operations
     command = "CREATE TABLE IF NOT EXISTS users(username TEXT, password TEXT, gold INTEGER, avatar TEXT)" #user table
     c.execute(command)
-    command = "CREATE TABLE IF NOT EXISTS todo(username TEXT, difficulty INTEGER, task TEXT)" #to-do list table
+    command = "CREATE TABLE IF NOT EXISTS todo(username TEXT, difficulty INTEGER, task TEXT, category TEXT)" #to-do list table
     c.execute(command)
     command = "CREATE TABLE IF NOT EXISTS pokemon(username TEXT, cardID TEXT)" #pokemon table
     c.execute(command)
     db.commit()
     db.close()
-
+    
 def main(): #calls all of the functions to build the databases
     try:
         users()

@@ -48,8 +48,8 @@ getDifficulty(username)
 returns a an empty list if the user doesn't exist or if the user hasn't inputted any tasks.
 returns a list of all the difficulties
 '''
-def getDifficulty():
-    DB_FILE="../data/CoffeeScriptors.db"
+def getDifficulty(username):
+    DB_FILE="data/CoffeeScriptors.db"
     db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
     c = db.cursor()
     listDiff = 'SELECT difficulty FROM todo WHERE todo.username = (?);'
@@ -62,7 +62,7 @@ getTask(username)
 returns a an empty list if the user doesn't exist or if the user hasn't inputted any tasks.
 returns a list of all the tasks
 '''
-def getTask():
+def getTask(username):
     DB_FILE="data/CoffeeScriptors.db"
     db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
     c = db.cursor()
