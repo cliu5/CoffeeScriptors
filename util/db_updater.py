@@ -38,7 +38,17 @@ def addpokemon(username, cardID):
     c.execute(insert,params)
     db.commit()
     db.close()
-
+    '''
+def updateavatar(username, avatar):
+    DB_FILE="data/CoffeeScriptors.db"
+    db = sqlite3.connect(DB_FILE)
+    c = db.cursor()
+    insert = "UPDATE users SET avatar (?) WHERE username= (?)"
+    params=(username,avatar)
+    c.execute(insert,params)
+    db.commit()
+    db.close()
+    '''
 def removeuser(username, password):
     DB_FILE="data/CoffeeScriptors.db"
     db = sqlite3.connect(DB_FILE)

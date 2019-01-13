@@ -42,7 +42,7 @@ def starter():
     if (whattype=='water'):
         poke="Squirtle"
         img=pokepy.getImage("Squirtle")
-        update.addpokemon('asdf',13)
+ #       update.updateavatar('asdf',"Squirtle")
     return render_template("pick2.html",
                            pokemon=poke,
                            pokeimg=img)
