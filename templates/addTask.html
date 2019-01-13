@@ -4,10 +4,11 @@
 {% block title %}poketica -- gamify your life{% endblock %}
 
 {% block content %}
+  <div id="callout"  class="callout" style="background-color:rgb(183, 143, 232);">
 
 <form action="/makeTask">
   <p> Task Category:
-    <select name='category'>
+    <select name="category">
       <option value="Habit">Habit</option>
       <option value="Long Term">Long Term</option>
       <option value="Short Term">Short Term</option>
@@ -15,7 +16,9 @@
     </select>
   </p>
   <p> Task Name: <input type ="text" name="title"> </p>
-  <p> Task Difficulty: <br>  <input type="radio" name="difficulty" value="1" checked> 1<br>
+  <p>
+    Task Difficulty:
+    <br>  <input type="radio" name="difficulty" value="1" checked> 1<br>
     <input type="radio" name="difficulty" value="2"> 2<br>
     <input type="radio" name="difficulty" value="3"> 3
     <br>

@@ -29,17 +29,20 @@ def pick():
 #----------------------------------------------------------receive starter----------------------------------------------
 @app.route("/receive",methods=['GET','POST'])
 def starter():
+    if 'username' in session:
+        username = session['username']
     whattype=request.form['type']
     if (whattype=='grass'):
         poke="Bulbasaur"
         img=pokepy.getImage("Bulbasaur")
+        #update.addpokemon(username,13)
     if (whattype=='fire'):
         poke="Charmander"
         img=pokepy.getImage("Charmander")
     if (whattype=='water'):
         poke="Squirtle"
         img=pokepy.getImage("Squirtle")
-
+        update.addpokemon('asdf',13)
     return render_template("pick2.html",
                            pokemon=poke,
                            pokeimg=img)
@@ -64,8 +67,14 @@ def authPage():
     if 'username' in session:
         username = session['username']
         userNames = []
-        if search.getAvatar(username) is None:
+        tasks=search.getTask(username)
+        print(tasks)
+        length=len(tasks)
+        print(search.getAvatar(username))
+        if search.getAvatar(username) ==[('',)]:
             return redirect(url_for('pick'))
+        #if search.getTask(username)==[]:
+            #return redirect(url_for('pick'))
         else:
             return render_template('home.html', username = username, names = userNames)
     else:
@@ -103,10 +112,17 @@ def addTask():
 
 @app.route("/makeTask", methods=['GET','POST'])
 def makeTask():
-    category = request.form['category']
-    task = request.form['title']
-    difficulty = request.form['difficulty']
-    update.addTask('username', difficulty, task, category)
+    if 'username' not in session:
+        flash("You need to be logged in to add tasks.")
+        return redirect('/auth')
+    category = request.args.get("category")
+    difficulty = request.args.get("difficulty")
+    task=request.args.get('title')
+    if category==None or task==None or difficulty==None:
+        flash("You must fill in all parameters.")
+        return redirect("/auth")
+    update.addtask('username', difficulty, task, category)
+    return redirect("/auth")
 
 @app.route("/added",methods=['GET','POST'])
 def added():

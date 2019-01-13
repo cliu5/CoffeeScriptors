@@ -4,9 +4,10 @@
 {% block title %}poketica -- gamify your life{% endblock %}
 
 {% block content %}
+  <div id="callout"  class="callout" style="background-color:rgb(183, 143, 232);">
 
 {% for each in pokeList %}
-<img src =each>
+<img src=each>
 {% endfor %}
 
 {% set msgs = get_flashed_messages() %}

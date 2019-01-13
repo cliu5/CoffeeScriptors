@@ -24,7 +24,7 @@ def addtask(username, difficulty, task, category): #adds a task to the todo list
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
     insert = "INSERT INTO todo VALUES(?,?,?,?)"
-    params=(username, difficulty, task, category)
+    params=(username,difficulty, task, category)
     c.execute(insert,params)
     db.commit()
     db.close()
