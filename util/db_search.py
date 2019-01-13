@@ -7,7 +7,7 @@ returns the password that matches the username if one exists
 else return none
 '''
 def password(username):
-    DB_FILE="data/CoffeeScriptors.db"
+    DB_FILE="../data/CoffeeScriptors.db"
     db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
     c = db.cursor()
     get_password = 'SELECT password FROM users WHERE users.username = (?)'
@@ -21,7 +21,7 @@ returns an empty list if username doesn't exist in the database
 returns [username] if username exists
 '''
 def username(username):
-    DB_FILE="data/CoffeeScriptors.db"
+    DB_FILE="../data/CoffeeScriptors.db"
     db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
     c = db.cursor()
     user_exists = 'SELECT username FROM users WHERE users.username = (?);'
@@ -35,7 +35,7 @@ returns an empty list if username doesn't exist in the database
 returns [avatar] if username exists
 '''
 def getAvatar(username):
-    DB_FILE="data/CoffeeScriptors.db"
+    DB_FILE="../data/CoffeeScriptors.db"
     db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
     c = db.cursor()
     getAva = 'SELECT avatar FROM users WHERE users.username = (?);'
@@ -49,7 +49,7 @@ returns a an empty list if the user doesn't exist or if the user hasn't inputted
 returns a list of all the difficulties
 '''
 def getDifficulty():
-    DB_FILE="data/CoffeeScriptors.db"
+    DB_FILE="../data/CoffeeScriptors.db"
     db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
     c = db.cursor()
     listDiff = 'SELECT difficulty FROM todo WHERE todo.username = (?);'
@@ -63,7 +63,7 @@ returns a an empty list if the user doesn't exist or if the user hasn't inputted
 returns a list of all the tasks
 '''
 def getTask():
-    DB_FILE="data/CoffeeScriptors.db"
+    DB_FILE="../data/CoffeeScriptors.db"
     db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
     c = db.cursor()
     listTasks = 'SELECT task FROM todo WHERE todo.username = (?);'
@@ -77,7 +77,7 @@ returns a an empty list if the user doesn't exist or if the user hasn't obtained
 returns a list of all the pokemon
 '''
 def getPokemon(username):
-    DB_FILE="data/CoffeeScriptors.db"
+    DB_FILE="../data/CoffeeScriptors.db"
     db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
     c = db.cursor()
     listPoke = 'SELECT cardID FROM pokemon WHERE pokemon.username = (?);'
