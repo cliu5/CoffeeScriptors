@@ -5,6 +5,7 @@
     {% block head %}
     <title> Home </title>
     {% endblock %}
+    <!--
     <style>
       input[type="radio"] + img{
 	  opacity:1.0;
@@ -12,16 +13,33 @@
       input:checked ~ label{
 	  opacity:1.0;
       }
-    </style>
+    </style> -->
+    <style>
+      radio_item{
+    display:none !important;
+}
+.label_item{
+    opacity:.2;
+}
+.radio_item:checked + label {
+    opacity: 1;
+      }
+      </style>
+    
   </head>
 
   <body>
     {% block content %}
-    <h1><center>Choose Your Type</center></h1>
-    
-    <form class="callout text-center" action ="/receive" method="POST">
 
-      <label>
+    <div id="callout"  class="callout" style="background-color:rgb(183, 143, 232);">
+<div class="callout primary" data-closable="slide-out-right">
+  
+    <h3><center>Choose Your Starter Pokemon</center></h3>
+</div>
+
+    <form  action ="/receive" method="POST">
+
+      <label><center>
 	<input type="radio" name="type" value="grass" id="grass" style="display:none;" required>
 	<p><h2>Grass</h2></p>
 	<img src="../static/grass.png" alt="grass" style="width:70px;height:70px;opacity:0.5;">
@@ -41,6 +59,7 @@
       
       <br>
       <input class="button" type="submit" value="Get Pokemon">
+      </center>
     </form>
     {% endblock %}
   </body>
