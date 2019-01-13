@@ -31,21 +31,25 @@ def pick():
 def starter():
     if 'username' in session:
         username = session['username']
-    whattype=request.form['type']
-    if (whattype=='grass'):
-        poke="Bulbasaur"
-        img=pokepy.getImage("Bulbasaur")
-        #update.addpokemon(username,13)
-    if (whattype=='fire'):
-        poke="Charmander"
-        img=pokepy.getImage("Charmander")
-    if (whattype=='water'):
-        poke="Squirtle"
-        img=pokepy.getImage("Squirtle")
- #       update.updateavatar('asdf',"Squirtle")
-    return render_template("pick2.html",
-                           pokemon=poke,
-                           pokeimg=img)
+        whattype=request.form['type']
+        if (whattype=='grass'):
+            poke="Bulbasaur"
+            img=pokepy.getImage("Bulbasaur")
+            update.addpokemon(username,44)
+        if (whattype=='fire'):
+            poke="Charmander"
+            img=pokepy.getImage("Charmander")
+            update.addpokemon(username,46)
+        if (whattype=='water'):
+            poke="Squirtle"
+            img=pokepy.getImage("Squirtle")
+            update.addpokemon(username,63)
+        update.updateavatar(username,poke)
+        return render_template("pick2.html",
+                                pokemon=poke,
+                                pokeimg=img)
+    else:
+        redirect(url_for('home'))
 #--------------------------------------------------login/register/logout-----------------------------------------------
 @app.route("/logout")
 def logout():
