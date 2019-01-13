@@ -10,7 +10,7 @@ password is the password of the user
 function adds the username and password to the users database
 '''
 def adduser(username, password):
-    DB_FILE="../data/CoffeeScriptors.db"
+    DB_FILE="data/CoffeeScriptors.db"
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
     insert = "INSERT INTO users VALUES(?,?,?,?)"
@@ -20,7 +20,7 @@ def adduser(username, password):
     db.close()
 
 def addtask(username, difficulty, task): #adds a task to the todo list
-    DB_FILE="../data/CoffeeScriptors.db"
+    DB_FILE="data/CoffeeScriptors.db"
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
     insert = "INSERT INTO todo VALUES(?,?,?)"
@@ -30,7 +30,7 @@ def addtask(username, difficulty, task): #adds a task to the todo list
     db.close()
 
 def addpokemon(username, cardID):
-    DB_FILE="../data/CoffeeScriptors.db"
+    DB_FILE="data/CoffeeScriptors.db"
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
     insert = "INSERT INTO pokemon VALUES(?,?)"

@@ -1,7 +1,7 @@
 import sqlite3 #imports sqlite
 
 def users(): #creates the users db
-    DB_FILE="../data/CoffeeScriptors.db"
+    DB_FILE="data/CoffeeScriptors.db"
     db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
     c = db.cursor() #facilitates db operations
     command = "CREATE TABLE IF NOT EXISTS users(username TEXT, password TEXT, gold INTEGER, avatar TEXT)" #user table
