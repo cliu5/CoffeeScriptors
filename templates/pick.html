@@ -1,43 +1,47 @@
 {% extends 'base.html' %}
 <html>
-<head>
-{% block head %}
-<title> Home </title>
-{% endblock %}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.0/dist/css/foundation.min.css">
-</head>
+  <head>
+    {% block head %}
+    <title> Home </title>
+    {% endblock %}
+    <style>
+      input[type="radio"] + img{
+	  opacity:0.5;
+      }
+      input[type=radio]:checked + img{
+	  opacity:1;
+      }
+    </style>
+  </head>
 
-<body>
-{% block content %}
-<div class="card">
-  <div class="card-section">
-    <p><h2>Bulbasaur</h2></p>
-  </div>
-  <img src="">
-  <div class="card-section">
-    <p>Grass type bulb</p>
-  </div>
-</div>
+  <body>
+    {% block content %}
 
-<div class="card">
-  <div class="card-section">
-    <p><h2>Charmander</h2></p>
-  </div>
-  <img src="">
-  <div class="card-section">
-    <p>Fire type reptile</p>
-  </div>
-</div>
+    
+    <form class="callout text-center" action ="/redone" method="POST">
 
-<div class="card">
-  <div class="card-section">
-    <p><h2>Squirtle</h2></p>
-  </div>
-  <img src="">
-  <div class="card-section">
-    <p>Water type turtle</p>
-  </div>
-</div>
-{% endblock %}
-</body>
+
+      <input type="radio" name="type" value="grass" id="grass" style="display:none;">
+      <label for="grass" style="opacity=0.5;">
+	<p><h2>Grass</h2></p>
+	<img src="../data/grass.png" alt="grass" style="width:50px;height:60px;">
+      </label>
+
+      <label>
+      <input type="radio" name="type" value="fire" style="display:none;">
+      <p><h2>Fire</h2></p>
+      <img src="fire.png" alt="fire" style="width:50px;height:60px;">
+      </label>
+
+      <label>
+      <input type="radio" name="type" value="water" style="display:none;">
+      <p><h2>Water</h2></p>
+      <img src="water.png" alt="water" style="width:50px;height:60px;">
+      </label>
+      
+      <br>
+      <input class="button" type="submit" value="Submit">
+    </form>
+    {% endblock %}
+  </body>
 </html>
