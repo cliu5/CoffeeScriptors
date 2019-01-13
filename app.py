@@ -7,6 +7,7 @@ from passlib.hash import sha256_crypt
 import urllib
 import json
 import random
+import pokemon as pokepy
 
 import sqlite3 #imports sqlite
 app = Flask(__name__)
@@ -21,6 +22,27 @@ def home():
     else:
         return render_template('auth.html')
 
+#----------------------------------------------------------pick starter type--------------------------------------------
+@app.route("/pick",methods=['GET','POST'])
+def pick():
+    return render_template('pick.html')
+#----------------------------------------------------------receive starter----------------------------------------------
+@app.route("/receive",methods=['GET','POST'])
+def starter():
+    whattype=request.form['type']
+    if (whattype=='grass'):
+        poke="Bulbasaur"
+        img=pokepy.getImage("Bulbasaur")
+    if (whattype=='fire'):
+        poke="Charmander"
+        img=pokepy.getImage("Charmander")
+    if (whattype=='water'):
+        poke="Squirtle"
+        img=pokepy.getImage("Squirtle")
+
+    return render_template("pick2.html",
+                           pokemon=poke,
+                           pokeimg=img)
 #--------------------------------------------------login/register/logout-----------------------------------------------
 @app.route("/logout")
 def logout():
@@ -42,7 +64,10 @@ def authPage():
     if 'username' in session:
         username = session['username']
         userNames = []
-        return render_template('home.html', username = username, names = userNames)
+        if search.getAvatar(username) is None:
+            return redirect(url_for('pick'))
+        else:
+            return render_template('home.html', username = username, names = userNames)
     else:
         try:
             username=request.form['username'] #username
