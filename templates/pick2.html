@@ -8,8 +8,10 @@
   </head>
 
   <body>
-    {% block content %}
-    {{pokemon}} 
+    {% block content %}<center>
+    <h3>Congratulations, You got a {{pokemon}}</h3>
+    <img src={{pokeimg}} style="height:20%; width:20%;">
+    </center>
     {% endblock %}
   </body>
 
