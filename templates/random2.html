@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+<html>
+  
+  <head>
+    {% block head %}
+    <title> Random </title>
+    {% endblock %}
+    
+  </head>
+
+  <body>
+    {% block content %}
+
+    <div id="callout"  class="callout" style="background-color:rgb(183, 143, 232);">
+<div class="callout primary" data-closable="slide-out-right">
+  
+    <h3><center>GACHA</center></h3>
+</div>
+
+    <form  action ="/gacha" method="POST">
+      <input class="button" type="submit" value="Get A Pokemon">
+    </form>
+    {% endblock %}
+  </body>
+
+</html>

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+<html>
+  
+  <head>
+    {% block head %}
+    <title> Random </title>
+    {% endblock %}
+  </head>
+
+  <body>
+    {% block content %}
+    <h2>Congratulations, you got a {{pokemon}}</h2>
+    <img src={{img}}>
+
+    {% endblock %}
+  </body>
+
+</html>
