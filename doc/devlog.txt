@@ -100,6 +100,11 @@ sophiaX -- 2019-1-10 12:09
 - Added the util init file
 ==============================================================
 
+emilyL -- 2019-1-10 12:25
+--------------------------------------------------------------
+- Started pick.py and pick.html for picking a starter pokemon
+==============================================================
+
 claireL -- 2019-1-11 11:09
 --------------------------------------------------------------
 - Created an add.html page for adding tasks and the python route for it
@@ -109,6 +114,17 @@ sophiaX -- 2019-1-11 12:09
 --------------------------------------------------------------
 - added addTask path to app
 - removed temporary files
+==============================================================
+
+emilyL -- 2019-1-11 12:30
+--------------------------------------------------------------
+- Updated pick.py - doesn't work
+==============================================================
+
+emilyL -- 2019-1-12 21:15
+--------------------------------------------------------------
+- Worked more on pick.py - selections working
+- Added to databases/ Fixing
 ==============================================================
 
 stefanT -- 2019-1-12 22:32
@@ -123,4 +139,21 @@ sophiaX -- 2019-1-13 02:17
 - removed navbar from the login and register pages
 - adjusted html files for consistency with app and for clarity
 - finished inventory.html and info route on app(not tested yet)
+==============================================================
+
+emilyL -- 2019-1-13 18:03
+--------------------------------------------------------------
+- Can choose starter pokemon - can't go to home page unless 
+you have a pokemon avatar
+- Updates database
+- Updates avatar
+==============================================================
+
+emilyL -- 2019-1-13 19:15
+--------------------------------------------------------------
+- Created gacha
+- Gacha gives a random pokemon to the user based on rarity
+(so most are common)
+- updates pokemon database
+- added to home.html
 ==============================================================

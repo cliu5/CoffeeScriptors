@@ -49,7 +49,36 @@ def starter():
                                 pokemon=poke,
                                 pokeimg=img)
     else:
-        redirect(url_for('home'))
+        return redirect(url_for('home'))
+#----------------------------------------------------------gacha-------------------------------------------------------
+        
+@app.route("/gacha",methods=['GET','POST'])
+def gacha():
+    if 'username' in session:
+        username=session['username']
+        plist=pokepy.getAllPokemon()
+        count=0
+        while count<5:
+            poke=random.choice(plist)
+            if pokepy.getRarity(poke)=="Common":
+                update.addpokemon(username,pokepy.getID(poke)[6:])
+                return render_template("random.html",
+                                       pokemon=poke,
+                                       img=pokepy.getImage(poke))
+            if count>=1:
+                if pokepy.getRarity(poke)=="Uncommon":
+                    update.addpokemon(username,pokepy.getID(poke)[6:])
+                    return render_template("random.html",
+                                           pokemon=poke,
+                                           img=pokepy.getImage(poke))
+            if count>=2:
+                if pokepy.getRarity(poke)=="Rare":
+                    update.addpokemon(username,pokepy.getID(poke)[6:])
+                    return render_template("random.html",
+                                           pokemon=poke,
+                                           img=pokepy.getImage(poke))
+    else:
+        return redirect(url_for('home'))
 #--------------------------------------------------login/register/logout-----------------------------------------------
 @app.route("/logout")
 def logout():
