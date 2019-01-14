@@ -5,38 +5,40 @@
 {% block content %}
 
 <div id="callout"  class="callout" style="background-color:rgb(183, 143, 232);">
+
+  <!--WELCOME STATEMENT-->
   <div class="callout primary" data-closable="slide-out-right">
     <center> <h3> Welcome {{username}} </h3></center>
   </div>
+  
+  <!--ADD TASK BUTTON-->
   <a href="/addTask"> <img src="../static/plus.jpg" style="float:right; height:50px; width:50px; border-radius:80%"></a>
 
   <div>
+    <!--AVATAR IMAGE-->
     <img src={{avatar}} style="height:10%; width:10%;">
 
     <p>Woke photo booth chia, unicorn celiac fingerstache taxidermy tattooed listicle cronut adaptogen master cleanse cloud bread typewriter humblebrag. Wayfarers sriracha fixie tattooed, DIY fingerstache small batch stumptown next level food truck mixtape tousled semiotics PBR&B. Distillery aesthetic plaid banh mi. Messenger bag authentic master cleanse af chicharrones, roof party quinoa.</p>
-    
+
+    <!--GACHA-->
     <div class="callout primary" data-closable="slide-out-right">
       <center><h3> Gacha </h3> </center>
     </div><center>	 
-    <form  action ="/gacha" method="POST">
-      <input class="button" type="submit" value="Get A Pokemon">
+      <form  action ="/gacha" method="POST">
+	<input class="button" type="submit" value="Get A Pokemon">
     </form></center>
-    
+
+    <!--INSTRUCTIONS-->
     <div class="callout primary" data-closable="slide-out-right">
       <center><h3> How to Play </h3> </center>
     </div>
     <div class="grid-x grid-padding-x">
       <div class="large-4 medium-4 small-4 cell">
 	<div style="background-color:rgb(217, 195, 244); color:black;" class="primary callout">
-
-
 	  <center>
 	    Poketica is a pokemon version of the application Habitica. It's perfect for people who have trouble staying on task.
 	  </center>
-
 	</div>	
-
-    
       </div>
       <div class="large-4 medium-4 small-4 cell">
 	<div style="background-color:rgb(217, 195, 244); color:black;" class="primary callout">
@@ -53,9 +55,39 @@
 	</div>
       </div>
     </div>
-    
+
+    <!--TASK BAR-->
     <div class="callout primary" data-closable="slide-out-right">
       <center><h3> Task Bar </h3> </center>
-    </div>
+
+      
+      <table>
+	<thead>
+	  <tr>
+	    <th>Tasks</th>
+	    <th>Difficulty</th>
+	    <th>Category</th>
+	  </tr>
+	</thead>
 	
-    {% endblock %}
+	<tbody>
+	  {% for each in info %}
+	  <tr>
+	    <td>
+	      {{ each[0] }}
+	    </td>
+	    <td>
+	      {{ each[1] }}
+	    </td>
+	    <td>
+	      {{ each[2] }}
+	    </td>
+	  </tr>
+	  {% endfor %}
+	</tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

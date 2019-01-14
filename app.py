@@ -103,13 +103,15 @@ def authPage():
         username = session['username']
         userNames = []
         tasks=search.getTask(username)
-        #print(tasks)
-        #print(tasks[0][0])
-        #length=len(tasks)
         difficulty=search.getDifficulty(username)
         category=search.getCategory(username)
-        #print(difficulty)
-        #print(search.getAvatar(username))
+        info = []
+        for length in range(0, len(tasks)):
+            row = []
+            row.append((tasks[length])[0])
+            row.append((difficulty[length])[0])
+            row.append((category[length])[0])
+            info.append(row)
         if search.getAvatar(username) ==[('',)]:
             return redirect(url_for('pick'))
         #if search.getTask(username)==[]:
@@ -119,9 +121,7 @@ def authPage():
                                    avatar=pokepy.getImage(search.getAvatar(username)[0][0]),
                                    username = username,
                                    names = userNames,
-                                   tasks=tasks,
-                                   difficulty=difficulty,
-                                   category=category)
+                                   info = info)
     else:
         try:
             username=request.form['username'] #username
@@ -205,6 +205,7 @@ def inventory():
         return render_template('inventory.html', pokeList = pokemon)
     else:
         return redirect(url_for('authPage'))
+
 if __name__ == '__main__':
     app.debug = True
     app.run()

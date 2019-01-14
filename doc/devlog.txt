@@ -163,3 +163,10 @@ sophiaX -- 2019-1-14 00:13
 - removed random.py
 - fixed so view inventory works
 ==============================================================
+
+sophiaX -- 2019-1-14 02:04
+--------------------------------------------------------------
+- View Tasks in a table works now
+- circumvented the lack of a jinja while loop with a list of lists
+  in app to make the info display in the table
+==============================================================
