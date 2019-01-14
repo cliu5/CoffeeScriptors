@@ -84,8 +84,3 @@ def getPokemon(username):
     c.execute(listPoke,(username,))
     pokeList = c.fetchall()
     return pokeList
-    
-    
-    
-        
-        

@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,session,url_for,redirect,flash
+from flask import Flask, render_template, request,session, url_for, redirect, flash
 from os import urandom
 from util import db_updater as update
 from util import db_search as search
@@ -26,6 +26,7 @@ def home():
 @app.route("/pick",methods=['GET','POST'])
 def pick():
     return render_template('pick.html')
+
 #----------------------------------------------------------receive starter----------------------------------------------
 @app.route("/receive",methods=['GET','POST'])
 def starter():
@@ -182,11 +183,18 @@ def added():
 
 @app.route('/info')
 def inventory():
-    pokeList = []
-    for each in search.getPokemon('username'):
-        pokeList.append(getImage(each))
-    return render_template('inventory.html', pokeList = pokeList)
-
+    if 'username' in session:
+        username = session['username']
+        pokemon = []
+        print(search.getPokemon(username))
+        print(pokepy.getImage(13))
+        for each in search.getPokemon(username):
+            print(each[0])
+            print(pokepy.getPokemon(each[0]))
+            pokemon.append(pokepy.getImage(pokepy.getPokemon(each[0])))
+        return render_template('inventory.html', pokeList = pokemon)
+    else:
+        return redirect(url_for('authPage'))
 if __name__ == '__main__':
     app.debug = True
     app.run()
