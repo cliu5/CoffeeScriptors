@@ -80,6 +80,7 @@ def gacha():
                                            img=pokepy.getImage(poke))
     else:
         return redirect(url_for('home'))
+
 #--------------------------------------------------login/register/logout-----------------------------------------------
 @app.route("/logout")
 def logout():
@@ -102,9 +103,13 @@ def authPage():
         username = session['username']
         userNames = []
         tasks=search.getTask(username)
-        print(tasks)
-        length=len(tasks)
-        print(search.getAvatar(username))
+        #print(tasks)
+        #print(tasks[0][0])
+        #length=len(tasks)
+        difficulty=search.getDifficulty(username)
+        category=search.getCategory(username)
+        #print(difficulty)
+        #print(search.getAvatar(username))
         if search.getAvatar(username) ==[('',)]:
             return redirect(url_for('pick'))
         #if search.getTask(username)==[]:
@@ -113,7 +118,10 @@ def authPage():
             return render_template('home.html',
                                    avatar=pokepy.getImage(search.getAvatar(username)[0][0]),
                                    username = username,
-                                   names = userNames)
+                                   names = userNames,
+                                   tasks=tasks,
+                                   difficulty=difficulty,
+                                   category=category)
     else:
         try:
             username=request.form['username'] #username
@@ -152,13 +160,15 @@ def makeTask():
     if 'username' not in session:
         flash("You need to be logged in to add tasks.")
         return redirect('/auth')
+    if 'username' in session:
+        username=session['username']
     category = request.args.get("category")
     difficulty = request.args.get("difficulty")
     task=request.args.get('title')
     if category==None or task==None or difficulty==None:
         flash("You must fill in all parameters.")
         return redirect("/auth")
-    update.addtask('username', difficulty, task, category)
+    update.addtask(username, difficulty, task, category)
     return redirect("/auth")
 
 @app.route("/added",methods=['GET','POST'])

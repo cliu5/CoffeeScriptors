@@ -71,6 +71,15 @@ def getTask(username):
     taskList = c.fetchall()
     return taskList
 
+def getCategory(username):
+    DB_FILE="data/CoffeeScriptors.db"
+    db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
+    c = db.cursor()
+    listCategory = 'SELECT category FROM todo WHERE todo.username = (?);'
+    c.execute(listCategory,(username,))
+    categoryList = c.fetchall()
+    return categoryList
+
 '''
 getPokemon(username)
 returns a an empty list if the user doesn't exist or if the user hasn't obtained any pokemon
