@@ -48,7 +48,7 @@ def updateavatar(username, avatar):
     c.execute(insert,params)
     db.commit()
     db.close()
- 
+
 def removeuser(username, password):
     DB_FILE="data/CoffeeScriptors.db"
     db = sqlite3.connect(DB_FILE)
@@ -62,7 +62,11 @@ def removetask(username, task): #adds a task to the todo list
     DB_FILE="data/CoffeeScriptors.db"
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
-    insert = "DELETE FROM todo WHERE username="+username+"and task="+task+";"
+    insert = "DELETE FROM todo WHERE username="
+    insert+=username
+    insert+="and task="
+    insert+=task
+    insert+=";"
     c.execute(insert)
     db.commit()
     db.close()

@@ -52,7 +52,7 @@ def starter():
     else:
         return redirect(url_for('home'))
 #----------------------------------------------------------gacha-------------------------------------------------------
-        
+
 @app.route("/gacha",methods=['GET','POST'])
 def gacha():
     if 'username' in session:
@@ -154,6 +154,17 @@ def addTask():
     if 'username' in session:
         return render_template('addTask.html')
     return redirect(url_for('home'))
+
+@app.route("/deleteTask", methods=['GET','POST'])
+def deleteTask():
+    if 'username' not in session:
+        flash("You need to be logged in to delete tasks.")
+        return redirect('/auth')
+    if 'username' in session:
+        username=session['username']
+    update.removetask(username,'kjl')
+    return redirect("/auth")
+
 
 @app.route("/makeTask", methods=['GET','POST'])
 def makeTask():

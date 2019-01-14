@@ -10,7 +10,7 @@
   <div class="callout primary" data-closable="slide-out-right">
     <center> <h3> Welcome {{username}} </h3></center>
   </div>
-  
+
   <!--ADD TASK BUTTON-->
   <a href="/addTask"> <img src="../static/plus.jpg" style="float:right; height:50px; width:50px; border-radius:80%"></a>
 
@@ -20,13 +20,7 @@
 
     <p>Woke photo booth chia, unicorn celiac fingerstache taxidermy tattooed listicle cronut adaptogen master cleanse cloud bread typewriter humblebrag. Wayfarers sriracha fixie tattooed, DIY fingerstache small batch stumptown next level food truck mixtape tousled semiotics PBR&B. Distillery aesthetic plaid banh mi. Messenger bag authentic master cleanse af chicharrones, roof party quinoa.</p>
 
-    <!--GACHA-->
-    <div class="callout primary" data-closable="slide-out-right">
-      <center><h3> Gacha </h3> </center>
-    </div><center>	 
-      <form  action ="/gacha" method="POST">
-	<input class="button" type="submit" value="Get A Pokemon">
-    </form></center>
+
 
     <!--INSTRUCTIONS-->
     <div class="callout primary" data-closable="slide-out-right">
@@ -38,7 +32,7 @@
 	  <center>
 	    Poketica is a pokemon version of the application Habitica. It's perfect for people who have trouble staying on task.
 	  </center>
-	</div>	
+	</div>
       </div>
       <div class="large-4 medium-4 small-4 cell">
 	<div style="background-color:rgb(217, 195, 244); color:black;" class="primary callout">
@@ -50,7 +44,7 @@
       <div class="large-4 medium-4 small-4 cell">
 	<div style="background-color:rgb(217, 195, 244); color:black;" class="primary callout">
 	  <center>
-	    You can use gold you've gained to buy more pokemon TCG cards to <b> catch them all </b>. Go to inventory to see what pokemon you've bought. 
+	    You can use gold you've gained to buy more pokemon TCG cards to <b> catch them all </b>. Go to inventory to see what pokemon you've bought.
 	  </center>
 	</div>
       </div>
@@ -60,16 +54,17 @@
     <div class="callout primary" data-closable="slide-out-right">
       <center><h3> Task Bar </h3> </center>
 
-      
+      </div>
       <table>
 	<thead>
 	  <tr>
 	    <th>Tasks</th>
 	    <th>Difficulty</th>
 	    <th>Category</th>
+      <th>Completed? </th>
 	  </tr>
 	</thead>
-	
+
 	<tbody>
 	  {% for each in info %}
 	  <tr>
@@ -82,12 +77,23 @@
 	    <td>
 	      {{ each[2] }}
 	    </td>
+      <td>
+        <a href="/deleteTask"> <img src="../static/delete.png"  style="height:50px; width:50px; border-radius:80%"></a>
+      </td>
+
 	  </tr>
 	  {% endfor %}
 	</tbody>
       </table>
     </div>
+
+  <!--GACHA-->
+  <div class="callout primary" data-closable="slide-out-right">
+    <center><h3> Buy a Pokemon! </h3> </center>
+  </div><center>
+    <form  action ="/gacha" method="POST">
+  <input class="button" type="submit" value="Get A Pokemon">
+  </form></center>
   </div>
-</div>
 
 {% endblock %}
