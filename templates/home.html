@@ -6,60 +6,67 @@
 {% block content %}
 
 <div id="callout"  class="callout" style="background-color:rgb(183, 143, 232);">
-<div class="callout primary" data-closable="slide-out-right">
-  <center> <h3> Welcome {{username}} </h3></center>
-</div>
-       <a href="/addTask"> <img src="../static/plus.jpg" style="float:right; height:50px; width:50px; border-radius:80%"></a>
-
-	<div>
-	 <img src={{avatar}} style="height:10%; width:10%;">
-
-  <p>Woke photo booth chia, unicorn celiac fingerstache taxidermy tattooed listicle cronut adaptogen master cleanse cloud bread typewriter humblebrag. Wayfarers sriracha fixie tattooed, DIY fingerstache small batch stumptown next level food truck mixtape tousled semiotics PBR&B. Distillery aesthetic plaid banh mi. Messenger bag authentic master cleanse af chicharrones, roof party quinoa.</p>
-
-<div class="callout primary" data-closable="slide-out-right">
-  <center><h3> How to Play </h3> </center>
+  <div class="callout primary" data-closable="slide-out-right">
+    <center> <h3> Welcome {{username}} </h3></center>
   </div>
-	<div class="grid-x grid-padding-x">
-	  <div class="large-4 medium-4 small-4 cell">
-	    <div style="background-color:rgb(217, 195, 244); color:black;" class="primary callout">
+  <a href="/addTask"> <img src="../static/plus.jpg" style="float:right; height:50px; width:50px; border-radius:80%"></a>
 
+  <div>
+    <img src={{avatar}} style="height:10%; width:10%;">
 
-	      <center>
-		Poketica is a pokemon version of the application Habitica. It's perfect for people who have trouble staying on task.
-	      </center>
-
-	    </div>
-	  </div>
-	  <div class="large-4 medium-4 small-4 cell">
-	    <div style="background-color:rgb(217, 195, 244); color:black;" class="primary callout">
-	      <center>
-Start by adding tasks to your taskbar. Rate their difficulty and indicate what kind of task it is. After completing a task, you can check it off from your taskbar. Checking off tasks will allow you to gain gold.
-	      </center>
-	    </div>
-	  </div>
-	  <div class="large-4 medium-4 small-4 cell">
-	    <div style="background-color:rgb(217, 195, 244); color:black;" class="primary callout">
-	      <center>
-You can use gold you've gained to buy more pokemon TCG cards to <b> catch them all </b>. Go to inventory to see what pokemon you've bought. 
-	      </center>
-	    </div>
-	  </div>
-	</div>
-	
-<div class="callout primary" data-closable="slide-out-right">
-  <center><h3> Task Bar </h3> </center>
-  </div>
-
-
-
-
-
-
-
-{% set msgs = get_flashed_messages() %}
-{% for each in msgs %}
-<h2>{{each}}<h2>
-    <br>
-    {% endfor %}
-    {% endblock %}
+    <p>Woke photo booth chia, unicorn celiac fingerstache taxidermy tattooed listicle cronut adaptogen master cleanse cloud bread typewriter humblebrag. Wayfarers sriracha fixie tattooed, DIY fingerstache small batch stumptown next level food truck mixtape tousled semiotics PBR&B. Distillery aesthetic plaid banh mi. Messenger bag authentic master cleanse af chicharrones, roof party quinoa.</p>
     
+    <div class="callout primary" data-closable="slide-out-right">
+      <center><h3> Gacha </h3> </center>
+    </div><center>	 
+    <form  action ="/gacha" method="POST">
+      <input class="button" type="submit" value="Get A Pokemon">
+    </form></center>
+    
+    <div class="callout primary" data-closable="slide-out-right">
+      <center><h3> How to Play </h3> </center>
+    </div>
+    <div class="grid-x grid-padding-x">
+      <div class="large-4 medium-4 small-4 cell">
+	<div style="background-color:rgb(217, 195, 244); color:black;" class="primary callout">
+
+
+	  <center>
+	    Poketica is a pokemon version of the application Habitica. It's perfect for people who have trouble staying on task.
+	  </center>
+
+	</div>
+      </div>
+      <div class="large-4 medium-4 small-4 cell">
+	<div style="background-color:rgb(217, 195, 244); color:black;" class="primary callout">
+	  <center>
+	    Start by adding tasks to your taskbar. Rate their difficulty and indicate what kind of task it is. After completing a task, you can check it off from your taskbar. Checking off tasks will allow you to gain gold.
+	  </center>
+	</div>
+      </div>
+      <div class="large-4 medium-4 small-4 cell">
+	<div style="background-color:rgb(217, 195, 244); color:black;" class="primary callout">
+	  <center>
+	    You can use gold you've gained to buy more pokemon TCG cards to <b> catch them all </b>. Go to inventory to see what pokemon you've bought. 
+	  </center>
+	</div>
+      </div>
+    </div>
+    
+    <div class="callout primary" data-closable="slide-out-right">
+      <center><h3> Task Bar </h3> </center>
+    </div>
+
+
+
+
+
+
+
+    {% set msgs = get_flashed_messages() %}
+    {% for each in msgs %}
+    <h2>{{each}}<h2>
+	<br>
+	{% endfor %}
+	{% endblock %}
+	
