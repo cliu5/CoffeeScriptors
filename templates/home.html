@@ -48,18 +48,40 @@ You can use gold you've gained to buy more pokemon TCG cards to <b> catch them a
 	
 <div class="callout primary" data-closable="slide-out-right">
   <center><h3> Task Bar </h3> </center>
-  </div>
+</div>
+{#
+{% for i in range({{length}}) %}
+<table class="hover">
+  <thead>
+    <tr>
+      <th width="200">Category</th>
+      <th>Difficulty</th>
+      <th width="150">Task</th>
+      <th width="150">Completed?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Content Goes Here</td>
+      <td>Content Goes Here</td>
+      <td>Content Goes Here</td>
+    </tr>
+    <tr>
+      <td>Content Goes Here</td>
+      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+      <td>Content Goes Here</td>
+      <td>Content Goes Here</td>
+    </tr>
+    <tr>
+      <td>Content Goes Here</td>
+      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+      <td>Content Goes Here</td>
+      <td>Content Goes Here</td>
+    </tr>
+  </tbody>
+</table>
 
-
-
-
-
-
-
-{% set msgs = get_flashed_messages() %}
-{% for each in msgs %}
-<h2>{{each}}<h2>
-    <br>
-    {% endfor %}
+-->
+#} 
     {% endblock %}
     
