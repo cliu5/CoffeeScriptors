@@ -57,27 +57,33 @@ def starter():
 def gacha():
     if 'username' in session:
         username=session['username']
-        plist=pokepy.getAllPokemon()
-        count=0
-        while count<5:
-            poke=random.choice(plist)
-            if pokepy.getRarity(poke)=="Common":
-                update.addpokemon(username,pokepy.getID(poke)[6:])
-                return render_template("random.html",
-                                       pokemon=poke,
-                                       img=pokepy.getImage(poke))
-            if count>=1:
-                if pokepy.getRarity(poke)=="Uncommon":
+        gold=search.getGold(username)[0][0]
+        if gold>=100:
+            update.updategold(username, gold, "subtract", 100)
+            plist=pokepy.getAllPokemon()
+            count=0
+            while count<5:
+                poke=random.choice(plist)
+                if pokepy.getRarity(poke)=="Common":
                     update.addpokemon(username,pokepy.getID(poke)[6:])
                     return render_template("random.html",
                                            pokemon=poke,
                                            img=pokepy.getImage(poke))
-            if count>=2:
-                if pokepy.getRarity(poke)=="Rare":
-                    update.addpokemon(username,pokepy.getID(poke)[6:])
-                    return render_template("random.html",
-                                           pokemon=poke,
-                                           img=pokepy.getImage(poke))
+                if count>=1:
+                    if pokepy.getRarity(poke)=="Uncommon":
+                        update.addpokemon(username,pokepy.getID(poke)[6:])
+                        return render_template("random.html",
+                                               pokemon=poke,
+                                               img=pokepy.getImage(poke))
+                if count>=2:
+                    if pokepy.getRarity(poke)=="Rare":
+                        update.addpokemon(username,pokepy.getID(poke)[6:])
+                        return render_template("random.html",
+                                               pokemon=poke,
+                                               img=pokepy.getImage(poke))
+        else:
+            flash("Not enough gold")
+            return redirect(url_for('home'))
     else:
         return redirect(url_for('home'))
 
