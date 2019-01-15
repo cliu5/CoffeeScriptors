@@ -171,7 +171,7 @@ def deleteTask():
         task = request.args.get("task")
         difficulty = request.args.get("difficulty")
         update.removetask(username,task)
-        update.updategold(username, search.getGold(username), "add", difficulty *10)
+        update.updategold(username, search.getGold(username), "add", int(difficulty) *10)
     return redirect("/auth")
 
 
