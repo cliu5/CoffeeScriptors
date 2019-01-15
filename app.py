@@ -169,7 +169,7 @@ def deleteTask():
     if 'username' in session:
         username=session['username']
         task = request.args.get("task")
-        difficulty = request.args.get("difficulty")
+        difficulty = search.getADiff(username, task)
         update.removetask(username,task)
         update.updategold(username, search.getGold(username), "add", int(difficulty) *10)
     return redirect("/auth")
