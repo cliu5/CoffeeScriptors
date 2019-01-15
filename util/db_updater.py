@@ -49,12 +49,27 @@ def updateavatar(username, avatar):
     db.commit()
     db.close()
 
+def updategold(username, original, operation, amount):
+    DB_FILE="data/CoffeeScriptors.db"
+    db = sqlite3.connect(DB_FILE)
+    c = db.cursor()
+    if operation=="subtract":
+        gold=original-amount
+    if operation=="add":
+        gold=original+amount
+    insert = "UPDATE pokemon SET gold=(?) WHERE username=(?);"
+    params=(gold,username)
+    c.execute(insert,params)
+    db.commit()
+    db.close()
+
 def removeuser(username, password):
     DB_FILE="data/CoffeeScriptors.db"
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
-    insert = "DELETE FROM users WHERE username="+username+";"
-    c.execute(insert)
+    insert = "DELETE FROM users WHERE username=(?);"
+    params=(username)
+    c.execute(insert,params)
     db.commit()
     db.close()
 
@@ -62,12 +77,9 @@ def removetask(username, task): #adds a task to the todo list
     DB_FILE="data/CoffeeScriptors.db"
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
-    insert = "DELETE FROM todo WHERE username="
-    insert+=username
-    insert+="and task="
-    insert+=task
-    insert+=";"
-    c.execute(insert)
+    insert = "DELETE FROM todo WHERE username=(?) and task=(?);"
+    params=(username,task)
+    c.execute(insert,params)
     db.commit()
     db.close()
 
@@ -75,7 +87,8 @@ def removepokemon(username, cardID):
     DB_FILE="data/CoffeeScriptors.db"
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
-    insert = "DELETE FROM users WHERE username="+username+"and cardID="+cardID+";"
-    c.execute(insert)
+    insert = "DELETE FROM users WHERE username=(?) and cardID=(?);"
+    params=(username,cardID)
+    c.execute(insert,params)
     db.commit()
     db.close()

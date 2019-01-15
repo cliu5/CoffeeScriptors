@@ -93,3 +93,12 @@ def getPokemon(username):
     c.execute(listPoke,(username,))
     pokeList = c.fetchall()
     return pokeList
+
+def getGold(username):
+    DB_FILE="data/CoffeeScriptors.db"
+    db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
+    c = db.cursor()
+    listGold = 'SELECT gold FROM users WHERE users.username = (?);'
+    c.execute(listGold,(username,))
+    goldList = c.fetchall()
+    return goldList
