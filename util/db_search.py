@@ -103,6 +103,15 @@ def getGold(username):
     goldList = c.fetchall()
     return goldList
 
+def getADiff(username, task):
+    DB_FILE="data/CoffeeScriptors.db"
+    db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
+    c = db.cursor()
+    listDiff = 'SELECT difficulty FROM todo WHERE todo.username = (?) and todo.task = (?);'
+    c.execute(listDiff,(username,task,))
+    diffList = c.fetchall()
+    return diffList
+
 def entriesExist():
     DB_FILE="data/CoffeeScriptors.db"
     db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
