@@ -10,6 +10,17 @@
   <div class="callout primary" data-closable="slide-out-right">
     <center> <h3> Welcome {{username}} </h3></center>
   </div>
+  <!-- Flashed MSGS -->
+{% set msgs = get_flashed_messages() %}
+{% for each in msgs %}
+
+<div data-closable class="callout alert-callout-border alert radius">
+  <strong>Error</strong> - {{each}}
+  <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
 
   <!--ADD TASK BUTTON-->
   <a href="/addTask"> <img src="../static/plus.jpg" style="float:right; height:50px; width:50px; border-radius:80%"></a>
@@ -88,13 +99,18 @@
       </table>
     </div>
 
-  <!--GACHA-->
-  <div class="callout primary" data-closable="slide-out-right">
-    <center><h3> Buy a Pokemon! </h3> </center>
-  </div><center>
-    <form  action ="/gacha" method="POST">
-  <input class="button" type="submit" value="Get A Pokemon">
-  </form></center>
-  </div>
+    <!--GACHA-->
+    <div class="callout primary" data-closable="slide-out-right">
+      <center><h3> Buy a Pokemon! </h3></center></div>
+
+
+
+
+
+    <center>
+      <a href="/gacha"> <img src="../static/pokeball.png" style="width:60px; height:60px;"> </a>
+      </center>
+
+    </div>
 
 {% endblock %}
