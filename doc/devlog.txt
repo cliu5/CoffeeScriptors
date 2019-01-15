@@ -178,3 +178,8 @@ sophiaX -- 2019-1-14 02:04
 - circumvented the lack of a jinja while loop with a list of lists
   in app to make the info display in the table
 ==============================================================
+
+sophiaX -- 2019-1-14 00:13
+--------------------------------------------------------------
+- changed delete task but not tested yet
+==============================================================
