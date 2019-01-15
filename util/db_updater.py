@@ -57,7 +57,7 @@ def updategold(username, original, operation, amount):
         gold=original-amount
     if operation=="add":
         gold=original+amount
-    insert = "UPDATE pokemon SET gold=(?) WHERE username=(?);"
+    insert = "UPDATE users SET gold=(?) WHERE username=(?);"
     params=(gold,username)
     c.execute(insert,params)
     db.commit()
