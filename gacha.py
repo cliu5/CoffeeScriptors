@@ -3,6 +3,8 @@ import random
 from os import urandom
 import urllib
 import pokemon as pokepy
+from util import db_search as search
+from util import db_updater as update
 
 app = Flask(__name__)
 app.secret_key = urandom(32)
@@ -14,21 +16,24 @@ def ok():
 
 @app.route("/gacha",methods=['GET','POST'])
 def home():
-    plist=pokepy.getAllPokemon()
-    count=0
-    while count<5:
-        poke=random.choice(plist)
-        if pokepy.getRarity(poke)=="Common":
-            return render_template("random.html",
+    if search.entriesExist() == False:
+        plist=pokepy.getAllPokemon()
+        for poke in plist:
+            update.addimage(poke, pokepy.getImage(poke), getRarity(poke))
+        count=0
+        while count<5:
+            poke=random.choice(plist)
+            if pokepy.getRarity(poke)=="Common":
+                return render_template("random.html",
                                    pokemon=poke,
                                    img=pokepy.getImage(poke))
-        if count>=1:
-            if pokepy.getRarity(poke)=="UnCommon":
-                return render_template("random.html",
-                                       pokemon=poke,
-                                       img=pokepy.getImage(poke))
-        if count>=2:
-            if pokepy.getRarity(poke)=="Rare":
+            if count>=1:
+                if pokepy.getRarity(poke)=="UnCommon":
+                    return render_template("random.html",
+                                           pokemon=poke,
+                                           img=pokepy.getImage(poke))
+            if count>=2:
+                if pokepy.getRarity(poke)=="Rare":
                 return render_template("random.html",
                                        pokemon=poke,
                                        img=pokepy.getImage(poke))

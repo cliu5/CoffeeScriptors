@@ -102,3 +102,15 @@ def getGold(username):
     c.execute(listGold,(username,))
     goldList = c.fetchall()
     return goldList
+
+def entriesExist():
+    DB_FILE="data/CoffeeScriptors.db"
+    db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
+    c = db.cursor()
+    check = 'SELECT * FROM images;'
+    c.execute(check)
+    exist = c.fetchone()
+    if exist is None:
+        return False
+    else:
+        return True

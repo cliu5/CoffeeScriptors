@@ -92,3 +92,14 @@ def removepokemon(username, cardID):
     c.execute(insert,params)
     db.commit()
     db.close()
+
+def addimage(pokemon, url, rarity):
+    DB_FILE="data/CoffeeScriptors.db"
+    db = sqlite3.connect(DB_FILE)
+    c = db.cursor()
+    insert = "INSERT INTO images VALUES(?,?,?)"
+    params=(pokemon,url,rarity)
+    c.execute(insert,params)
+    db.commit()
+    db.close()
+    
