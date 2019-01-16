@@ -72,7 +72,6 @@
 	    <th>Tasks</th>
 	    <th>Difficulty</th>
 	    <th>Category</th>
-      <th>Completed? </th>
 	  </tr>
 	</thead>
 
@@ -88,17 +87,23 @@
 	    <td>
 	      {{ each[2] }}
 	    </td>
-      <td>
-        <a href="/deleteTask"> <img src="../static/delete.png"  style="height:50px; width:50px; border-radius:80%"></a>
-	<input type="hidden" task="{{each[0]}}" difficulty="{{each[1]}}">
-      </td>
-
 	  </tr>
 	  {% endfor %}
 	</tbody>
       </table>
     </div>
 
+  <div class="callout primary" data-closable="slide-out-right">
+    <form action="/deleteTask">
+      <select name="completion">
+	{% for each in info %}
+	<option value="{{each[0]}}"> {{ each[0] }} </option>
+	{% endfor %}
+      </select>
+      <input type="submit" value="remove">
+    </form>
+  </div>
+  
     <!--GACHA-->
     <div class="callout primary" data-closable="slide-out-right">
       <center><h3> Buy a Pokemon! </h3></center></div>

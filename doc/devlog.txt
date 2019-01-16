@@ -179,7 +179,14 @@ sophiaX -- 2019-1-14 02:04
   in app to make the info display in the table
 ==============================================================
 
-sophiaX -- 2019-1-14 00:13
+sophiaX -- 2019-1-15 12:04
 --------------------------------------------------------------
 - changed delete task but not tested yet
+==============================================================
+
+sophiaX -- 2019-1-15 21:54
+--------------------------------------------------------------
+- decided to make a dropdown for delete task
+- couldn't figure out how to pass a jinja var to python app
+- delete task doesn't work yet
 ==============================================================
