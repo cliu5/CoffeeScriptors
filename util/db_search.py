@@ -101,7 +101,7 @@ def getGold(username):
     listGold = 'SELECT gold FROM users WHERE users.username = (?);'
     c.execute(listGold,(username,))
     goldList = c.fetchall()
-    return goldList
+    return (goldList[0])[0]
 
 def getADiff(username, task):
     DB_FILE="data/CoffeeScriptors.db"
@@ -110,7 +110,7 @@ def getADiff(username, task):
     listDiff = 'SELECT difficulty FROM todo WHERE todo.username = (?) and todo.task = (?);'
     c.execute(listDiff,(username,task,))
     diffList = c.fetchall()
-    return diffList
+    return (diffList[0])[0]
 
 def entriesExist():
     DB_FILE="data/CoffeeScriptors.db"

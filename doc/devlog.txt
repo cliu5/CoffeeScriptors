@@ -198,3 +198,9 @@ stefanT -- 2019-1-15 23:09
   and then using the table to retrieve the info we need instead
   of constantly pulling from the API.
 ==============================================================
+
+sophiaX -- 2019-1-16 09:51
+--------------------------------------------------------------
+- changed db_search functions getADiff and getGold
+- removing task and adding gold works now
+==============================================================
