@@ -204,3 +204,9 @@ sophiaX -- 2019-1-16 09:51
 - changed db_search functions getADiff and getGold
 - removing task and adding gold works now
 ==============================================================
+
+stefanT -- 2019-1-16 12:26
+--------------------------------------------------------------
+- Final updates to the gacha so that it properly displays the 
+  image int the inventory.
+==============================================================
