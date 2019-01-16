@@ -60,27 +60,40 @@ def gacha():
         gold=search.getGold(username)[0][0]
         if gold>=100:
             update.updategold(username, gold, "subtract", 100)
-            plist=pokepy.getAllPokemon()
-            count=0
-            while count<5:
-                poke=random.choice(plist)
-                if pokepy.getRarity(poke)=="Common":
-                    update.addpokemon(username,pokepy.getID(poke)[6:])
-                    return render_template("random.html",
-                                           pokemon=poke,
-                                           img=pokepy.getImage(poke))
-                if count>=1:
-                    if pokepy.getRarity(poke)=="Uncommon":
-                        update.addpokemon(username,pokepy.getID(poke)[6:])
-                        return render_template("random.html",
-                                               pokemon=poke,
-                                               img=pokepy.getImage(poke))
-                if count>=2:
-                    if pokepy.getRarity(poke)=="Rare":
-                        update.addpokemon(username,pokepy.getID(poke)[6:])
-                        return render_template("random.html",
-                                               pokemon=poke,
-                                               img=pokepy.getImage(poke))
+            if search.entriesExist() == False:
+                plist=pokepy.getAllPokemon()
+                for poke in plist:
+                    update.addimage(poke, pokepy.getRarity(poke), pokepy.getImage(poke))
+
+            rand = random.randint(1,100)
+    
+            if rand <= 75:
+                pokemons = search.getPokeByRarity("Common")
+                poke = random.choice(pokemons)
+                poke = poke[0]
+                image = search.getImageOfPoke(poke)
+                image = image[0][0]
+                return render_template("random.html",
+                                       pokemon = poke,
+                                       img = image)
+            elif rand <= 95:
+                pokemons = search.getPokeByRarity("Uncommon")
+                poke = random.choice(pokemons)
+                poke = poke[0]
+                image = search.getImageOfPoke(poke)
+                image = image[0][0]
+                return render_template("random.html",
+                                       pokemon = poke,
+                                       img = image)
+            elif rand <= 100:
+                pokemons = search.getPokeByRarity("Rare")
+                poke = random.choice(pokemons)
+                poke = poke[0]
+                image = search.getImageOfPoke(poke)
+                image = image[0][0]
+                return render_template("random.html",
+                                       pokemon = poke,
+                                       img = image)
         else:
             flash("Not enough gold")
             return redirect(url_for('home'))

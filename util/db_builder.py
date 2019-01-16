@@ -9,7 +9,8 @@ def users(): #creates the users db
     command = "CREATE TABLE IF NOT EXISTS todo(username TEXT, difficulty INTEGER, task TEXT, category TEXT)" #to-do list table
     c.execute(command)
     command = "CREATE TABLE IF NOT EXISTS pokemon(username TEXT, cardID TEXT)" #pokemon table
-    command = "CREATE TABLE IF NOT EXISTS images(rowID INTEGER PRIMARY KEY AUTOINCREMENT, pokemon TEXT, url TEXT, rarity TEXT)"
+    c.execute(command)
+    command = "CREATE TABLE IF NOT EXISTS images(pokemon TEXT, rarity TEXT, url TEXT)"
     c.execute(command)
     db.commit()
     db.close()

@@ -123,3 +123,23 @@ def entriesExist():
         return False
     else:
         return True
+
+def getPokeByRarity(r):
+    DB_FILE="data/CoffeeScriptors.db"
+    db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
+    c = db.cursor()
+    listPoke = 'SELECT pokemon FROM images WHERE images.rarity = (?);'
+    c.execute(listPoke,(r,))
+    pokeList = c.fetchall()
+    return pokeList
+
+def getImageOfPoke(p):
+    print(p)
+    DB_FILE="data/CoffeeScriptors.db"
+    db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
+    c = db.cursor()
+    listImage = 'SELECT url FROM images WHERE images.pokemon = (?);'
+    c.execute(listImage,(p,))
+    imageList = c.fetchall()
+    return imageList
+    
