@@ -1,17 +1,16 @@
-var lis=document.getElementsByName('type');
-console.log();
+var list = document.getElementsByTagName('img');
+console.log(list);
 
-for(var i=0; i<lis.length,i++){
-    lis.addEventListener('mouseover',function(e){
-	lis[i].style.opacity = "1";
-    })
-    if(lis[i].clicked == true){			
-	lis[i].addEventListener('click',function(e){
-	    element.style.opacity = "0.5";
-	})
-    }
-    lis[i].addEventListener('click',function(e){
-	lis[i].style.opacity = "1";
-    })
-
+for(var i = 0; i < list.length; i++){
+    var node = list[i];
+    console.log(node);
+    node.addEventListener('mouseover',function(e){
+	node.style.opacity = "1";
+    });
+    node.addEventListener('mouseout',function(e){
+	node.style.opacity = "0.5";
+    });
+    node.addEventListener('clicked',function(e){
+	node.style.opacity = "1";
+    });
 }

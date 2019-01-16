@@ -210,3 +210,13 @@ stefanT -- 2019-1-16 12:26
 - Final updates to the gacha so that it properly displays the 
   image int the inventory.
 ==============================================================
+
+sophiaX -- 2019-1-16 15:38
+--------------------------------------------------------------
+- Attempt at starter pokemon selection js opacity
+- Currently hovering over any of the images will cause the water
+  image to turn opaque
+- running it using the app also makes it break down further as
+  the error says the js file failed to load
+- I just opened the html file in firefox to test the js
+==============================================================
