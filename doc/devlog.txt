@@ -190,3 +190,11 @@ sophiaX -- 2019-1-15 21:54
 - couldn't figure out how to pass a jinja var to python app
 - delete task doesn't work yet
 ==============================================================
+
+stefanT -- 2019-1-15 23:09
+--------------------------------------------------------------
+- Added a new table called image to the database.
+- Improved gacha by storing the Poke TCG API in the image table
+  and then using the table to retrieve the info we need instead
+  of constantly pulling from the API.
+==============================================================
