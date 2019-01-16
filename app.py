@@ -66,7 +66,7 @@ def gacha():
                     update.addimage(poke, pokepy.getRarity(poke), pokepy.getImage(poke))
 
             rand = random.randint(1,100)
-    
+
             if rand <= 75:
                 pokemons = search.getPokeByRarity("Common")
                 poke = random.choice(pokemons)
@@ -139,11 +139,15 @@ def authPage():
         #if search.getTask(username)==[]:
             #return redirect(url_for('pick'))
         else:
+            gold=search.getGold(username)
             return render_template('home.html',
                                    avatar=pokepy.getImage(search.getAvatar(username)[0][0]),
                                    username = username,
                                    names = userNames,
-                                   info = info)
+                                   info = info,
+                                   gold=gold)
+
+
     else:
         try:
             username=request.form['username'] #username
