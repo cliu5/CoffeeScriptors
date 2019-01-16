@@ -57,7 +57,7 @@ def starter():
 def gacha():
     if 'username' in session:
         username=session['username']
-        gold=search.getGold(username)[0][0]
+        gold=search.getGold(username)
         if gold>=100:
             update.updategold(username, gold, "subtract", 100)
             if search.entriesExist() == False:
@@ -73,6 +73,7 @@ def gacha():
                 poke = poke[0]
                 image = search.getImageOfPoke(poke)
                 image = image[0][0]
+                update.addpokemon(username,pokepy.getID(poke)[6:])
                 return render_template("random.html",
                                        pokemon = poke,
                                        img = image)
@@ -82,6 +83,7 @@ def gacha():
                 poke = poke[0]
                 image = search.getImageOfPoke(poke)
                 image = image[0][0]
+                update.addpokemon(username,pokepy.getID(poke)[6:])
                 return render_template("random.html",
                                        pokemon = poke,
                                        img = image)
@@ -91,6 +93,7 @@ def gacha():
                 poke = poke[0]
                 image = search.getImageOfPoke(poke)
                 image = image[0][0]
+                update.addpokemon(username,pokepy.getID(poke)[6:])
                 return render_template("random.html",
                                        pokemon = poke,
                                        img = image)

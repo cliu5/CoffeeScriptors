@@ -158,12 +158,3 @@ def getImage(pokemon):
 
         if (pokemon == data["card"]["name"]):
             return data["card"]["imageUrlHiRes"]
-
-        
-#print(getAllPokemon())
-print(getStarters())
-print(getID("Alakazam"))
-print(getHP("Alakazam"))
-print(getType("Alakazam"))
-print(getRarity("Alakazam"))
-print(getImage("Alakazam"))
