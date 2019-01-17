@@ -2,8 +2,11 @@
 ## Coffee Scriptors :coffee: - Claire Liu, Sophia Xia, Emily Lee, Stefan Tan 
 ## Roles:
 Claire Liu - Project Manager
-Sophia Xia - 
+<br>
+Sophia Xia -
+<br>
 Emily Lee - 
+<br>
 Stefan Tan - 
 
 ## Overview:
