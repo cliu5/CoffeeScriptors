@@ -230,4 +230,6 @@ sophiaX -- 2019-1-16 15:38
 claireL -- 2019-1-17 8:38
 --------------------------------------------------------------
 - can't delete tasks if you have none
+- changes to devlog: deleted the battle component, and simulations of 
+battles. Added columns to databases as indicated. 
 ==============================================================
