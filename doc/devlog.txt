@@ -58,7 +58,7 @@ Things to fix in devlog:
 
 stefanT -- 2019-1-8 14:45
 --------------------------------------------------------------
-Updated the component map by clarifying what causes the actions 
+Updated the component map by clarifying what causes the actions
 of adding and deleting the database.
 ==============================================================
 
@@ -143,7 +143,7 @@ sophiaX -- 2019-1-13 02:17
 
 emilyL -- 2019-1-13 18:03
 --------------------------------------------------------------
-- Can choose starter pokemon - can't go to home page unless 
+- Can choose starter pokemon - can't go to home page unless
 you have a pokemon avatar
 - Updates database
 - Updates avatar
@@ -178,6 +178,12 @@ sophiaX -- 2019-1-14 02:04
 - circumvented the lack of a jinja while loop with a list of lists
   in app to make the info display in the table
 ==============================================================
+claireL -- 2019-1-14 10:04
+--------------------------------------------------------------
+- Cleaned up foundation
+- coolors
+- added flashing messages in the form of slidable closeouts
+==============================================================
 
 sophiaX -- 2019-1-15 12:04
 --------------------------------------------------------------
@@ -207,7 +213,7 @@ sophiaX -- 2019-1-16 09:51
 
 stefanT -- 2019-1-16 12:26
 --------------------------------------------------------------
-- Final updates to the gacha so that it properly displays the 
+- Final updates to the gacha so that it properly displays the
   image int the inventory.
 ==============================================================
 
@@ -219,4 +225,9 @@ sophiaX -- 2019-1-16 15:38
 - running it using the app also makes it break down further as
   the error says the js file failed to load
 - I just opened the html file in firefox to test the js
+==============================================================
+
+claireL -- 2019-1-17 8:38
+--------------------------------------------------------------
+- can't delete tasks if you have none
 ==============================================================

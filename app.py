@@ -190,10 +190,14 @@ def deleteTask():
         username=session['username']
         task = request.args.get("completion")
         print(task)
-        difficulty = search.getADiff(username, task)
-        print(difficulty)
-        update.removetask(username, task)
-        update.updategold(username, search.getGold(username), "add", difficulty*10)
+        if task==None:
+            flash("You have no tasks to delete")
+            return redirect('/auth')
+        else:
+            difficulty = search.getADiff(username, task)
+            print(difficulty)
+            update.removetask(username, task)
+            update.updategold(username, search.getGold(username), "add", difficulty*10)
     return redirect("/auth")
 
 
