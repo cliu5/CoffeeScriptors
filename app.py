@@ -25,7 +25,14 @@ def home():
 #----------------------------------------------------------pick starter type--------------------------------------------
 @app.route("/pick",methods=['GET','POST'])
 def pick():
-    return render_template('pick.html')
+    if 'username' in session:
+        if (search.getAvatar(session['username'])[0])[0] == '':
+            return render_template('pick.html')
+        else:
+            return redirect(url_for('home'))
+            
+    else:
+        return redirect(url_for('home'))
 
 #----------------------------------------------------------receive starter----------------------------------------------
 @app.route("/receive",methods=['GET','POST'])
