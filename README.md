@@ -1,9 +1,16 @@
 # Pokética
 ## Coffee Scriptors :coffee: - Claire Liu, Sophia Xia, Emily Lee, Stefan Tan 
+## Roles:
+Claire Liu - Project Manager
+Sophia Xia - 
+Emily Lee - 
+Stefan Tan - 
 
 ## Overview:
 TL;DR: RPG To-Do List!
 Pokética is a web-based application based off of the application Habitica. Pokética allows the user to add and remove tasks to and from their own personalized to-do list. Whenever the user completes a task on their to-do list, they would gain gold which they could later use to buy more pokémons. Pokética is made for everyone, especially those who procrastinate all the time, as it provides an incentive and helps us all release our inner Ash Ketchum. **Gotta Catch 'Em All!**
+
+## [our video demo here](youtube.com):
 
 ## Instructions to Run: 
 1. Open a terminal session.
@@ -28,7 +35,7 @@ $ python3 -m venv name
 10. Open a web browser and navigate to the link http://127.0.0.1:5000/.
 11. Follow the prompts of our application and enjoy!
 
-## Dependencies:
+## Dependencies/Necessary Packages:
 * Flask==1.0.2
 
    Used as the framework for the app.
