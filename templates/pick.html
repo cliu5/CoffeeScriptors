@@ -3,7 +3,7 @@
   
   <head>
     {% block head %}
-    <title> Home </title>
+    <title> Pick </title>
     {% endblock %}
   </head>
 
@@ -19,22 +19,22 @@
     <form  action ="/receive" method="POST">
 
       <center>
-	  <label>
-	    <input type="radio" name="type" value="grass" id="grass" style="display:none;" required>
-	    <p><h2>Grass</h2></p>
-	    <img src="../static/grass.png" alt="grass" style="width:70px;height:70px;opacity:0.5;">
+	  <label><h2>
+	    <input type="radio" name="type" value="grass" id="grass" required>
+	    Grass</h2>
+	    <img src="../static/grass.png" alt="grass" style="width:70px;height:70px;">
 	  </label>
-	  
-	  <label>
-	    <input type="radio" name="type" value="fire" style="display:none;">
-	    <p><h2>Fire</h2></p>
-	    <img src="../static/fire.png" alt="fire" style="width:70px;height:70px;opacity:0.5;">
+	  <br>
+	  <label><h2>
+	    <input type="radio" name="type" value="fire">
+	    Fire</h2>
+	    <img src="../static/fire.png" alt="fire" style="width:70px;height:70px;">
 	  </label>
-
-	  <label>
-	    <input type="radio" name="type" value="water" style="display:none;">
-	    <p><h2>Water</h2></p>
-	    <img src="../static/water.png" alt="water" style="width:70px;height:70px;opacity:0.5;">
+	  <br>
+	  <label><h2>
+	    <input type="radio" name="type" value="water">
+	    Water</h2>
+	    <img src="../static/water.png" alt="water" style="width:70px;height:70px;">
 	  </label>
 	  
 	  <br>
