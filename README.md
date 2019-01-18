@@ -13,7 +13,7 @@ Stefan Tan - Backend/ API & Database
 TL;DR: RPG To-Do List!
 Pokética is a web-based application based off of the application Habitica. Pokética allows the user to add and remove tasks to and from their own personalized to-do list. Whenever the user completes a task on their to-do list, they would gain gold which they could later use to buy more pokémons. Pokética is made for everyone, especially those who procrastinate all the time, as it provides an incentive and helps us all release our inner Ash Ketchum. **Gotta Catch 'Em All!**
 
-## [our video demo here](www.youtube.com):
+## [our video demo here](https://www.youtube.com/watch?v=DrYRsI6X0wI):
 
 ## Instructions to Run: 
 1. Open a terminal session.
